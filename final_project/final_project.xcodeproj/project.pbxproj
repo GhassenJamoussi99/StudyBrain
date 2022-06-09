@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C70B0230285143B000BD8C02 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70B022F285143B000BD8C02 /* ViewModifiers.swift */; };
 		C7B005412851F45B00323E1D /* brain_loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005402851F45B00323E1D /* brain_loader.gif */; };
 		C7B005432851F71000323E1D /* load0.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005422851F71000323E1D /* load0.gif */; };
 		C7B005452851F8A200323E1D /* load4.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005442851F8A200323E1D /* load4.gif */; };
@@ -44,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C70B022F285143B000BD8C02 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		C7B005402851F45B00323E1D /* brain_loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = brain_loader.gif; sourceTree = "<group>"; };
 		C7B005422851F71000323E1D /* load0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load0.gif; sourceTree = "<group>"; };
 		C7B005442851F8A200323E1D /* load4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load4.gif; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				C7D97B5A284F9DD60063762B /* Preview Content */,
 				C7D97B7E284FBD110063762B /* StudyTimerView.swift */,
 				C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */,
-				C70B022F285143B000BD8C02 /* ViewModifiers.swift */,
 				C7B0054A2852118700323E1D /* MindGamesView.swift */,
 				C7B0054C2852119500323E1D /* MemoryGameView.swift */,
 			);
@@ -313,7 +310,6 @@
 				C7B00547285202A800323E1D /* GifImage.swift in Sources */,
 				C7D97B81284FC90B0063762B /* StudyTimerViewModel.swift in Sources */,
 				C7B0054D2852119500323E1D /* MemoryGameView.swift in Sources */,
-				C70B0230285143B000BD8C02 /* ViewModifiers.swift in Sources */,
 				C7D97B7F284FBD110063762B /* StudyTimerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

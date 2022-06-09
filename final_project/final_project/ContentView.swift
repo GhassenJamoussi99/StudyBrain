@@ -64,7 +64,7 @@ struct ContentView: View {
                 
                 HStack(alignment: .center)
                 {
-                    NavigationLink(destination: Text("Second View"), isActive: self.$navigateToMindGames) { EmptyView() }
+                    NavigationLink(destination: MindGamesView(), isActive: self.$navigateToMindGames) { EmptyView() }
                     Button(action: {
                         self.navigateToMindGames = true
                      }, label: {
@@ -96,7 +96,7 @@ struct ContentView: View {
                 
                  Spacer()
                }.background(Image("brain_img"))
-                .hiddenNavigationBarStyle()
+                .navigationBarTitle("Back", displayMode: .inline)
             }
         }
     }
