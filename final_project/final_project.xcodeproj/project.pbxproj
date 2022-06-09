@@ -108,6 +108,25 @@
 			path = GIFsLibrary;
 			sourceTree = "<group>";
 		};
+		C7B0054E2852399900323E1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7D97B56284F9DD50063762B /* ContentView.swift */,
+				C7B0054C2852119500323E1D /* MemoryGameView.swift */,
+				C7B0054A2852118700323E1D /* MindGamesView.swift */,
+				C7D97B7E284FBD110063762B /* StudyTimerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7B0054F285239A500323E1D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		C7D97B48284F9DD50063762B = {
 			isa = PBXGroup;
 			children = (
@@ -131,16 +150,13 @@
 		C7D97B53284F9DD50063762B /* final_project */ = {
 			isa = PBXGroup;
 			children = (
+				C7B0054F285239A500323E1D /* ViewModels */,
+				C7B0054E2852399900323E1D /* Views */,
 				C710599228518C270029B959 /* GIFsLibrary */,
 				C710598D28517BD40029B959 /* GIFs */,
 				C7D97B54284F9DD50063762B /* final_projectApp.swift */,
-				C7D97B56284F9DD50063762B /* ContentView.swift */,
 				C7D97B58284F9DD60063762B /* Assets.xcassets */,
 				C7D97B5A284F9DD60063762B /* Preview Content */,
-				C7D97B7E284FBD110063762B /* StudyTimerView.swift */,
-				C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */,
-				C7B0054A2852118700323E1D /* MindGamesView.swift */,
-				C7B0054C2852119500323E1D /* MemoryGameView.swift */,
 			);
 			path = final_project;
 			sourceTree = "<group>";
