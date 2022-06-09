@@ -51,7 +51,7 @@ struct MemoryGameView: View {
                                         )
                                     )
                                   }
-                                }.disabled(MemoryGameVM.isSet(row: row, column: column) || MemoryGameVM.showGuide || !MemoryGameVM.isStarted || MemoryGameVM.isFinished)
+                                }.disabled(MemoryGameVM.showGuide || !MemoryGameVM.isStarted || MemoryGameVM.isFinished)
                                 //If it's set then disable the pushbutton for that case
                                 //If showGuide is true set then disable the pushbuttons
                                 //If the game did not start then disable the pushbuttons
