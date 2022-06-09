@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var navigateToStudyTimer = false
     @State private var navigateToMindGames = false
+
     //Possibility to create quizzes as well
     //Linux questions and bash etc ...
     @State private var navigateToQuizzes = false
@@ -95,6 +96,7 @@ struct ContentView: View {
                 
                  Spacer()
                }.background(Image("brain_img"))
+                .hiddenNavigationBarStyle()
             }
         }
     }

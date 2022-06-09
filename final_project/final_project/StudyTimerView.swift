@@ -9,35 +9,50 @@ import SwiftUI
 struct StudyTimerView: View {
     @StateObject var StudyTimerVM  = StudyTimerViewModel()
     
+    
     var body: some View {
         VStack {
+            HStack{
             Text("Study Timer")
                 .bold()
                 .font(.system(size: 35))
                 .foregroundColor(Color.white)
-        
+            }
+            
             GeometryReader { geo in
-                VStack(spacing:15) {
-                    // MARK:Timer Ring
+                VStack {
+                    //GifImage is a static view so we need multiple objects instantiation to update them
+                    HStack{
+                        if (StudyTimerVM.gifName == "load0" ) {
+                          GifImage(StudyTimerVM.gifName)
+                        } else if (StudyTimerVM.gifName == "load4" ) {
+                          GifImage(StudyTimerVM.gifName)
+                        } else if (StudyTimerVM.gifName == "brain_loader") {
+                          GifImage(StudyTimerVM.gifName)
+                        }
+                    }.frame(width: geo.size.width/2,height:geo.size.height/2)
+                                    
                     HStack{
                         Text(StudyTimerVM.timerStringValue)
                             .font(.system(size:45,weight:.light))
                             .foregroundColor(.white)
-                    }.frame(width: geo.size.width, height: geo.size.height - geo.size.height/4)
+                    }.frame(width: geo.size.width, height: geo.size.height/4)
                         
                     HStack {
                         Button(action: {
-                            if StudyTimerVM.isStarted {
-                                
-                            }else{
+                            if StudyTimerVM.isStarted && !StudyTimerVM.isPaused {
+                                StudyTimerVM.isPaused = true
+                            } else if StudyTimerVM.isPaused == true {
+                                StudyTimerVM.isPaused = false
+                            } else {
                                 StudyTimerVM.addNewTimer = true //invoke add new timer window
                             }
                          },
                              label: {
-                              Text("Add Timer")
+                            Text(StudyTimerVM.isPaused ? (StudyTimerVM.isStarted ? "Resume" : "Add Timer") : (StudyTimerVM.isStarted ? "Pause" : "Add Timer"))
                              .font(.system(size:20))
                              .frame(width:geo.size.width/3, height:geo.size.height/10)
-                             .background(Color.cyan)
+                             .background(StudyTimerVM.isPaused ? Color.cyan : (StudyTimerVM.isStarted ? Color.red : Color.cyan))
                              .foregroundColor(Color.white)
                              .clipShape(Rectangle())
                              .cornerRadius(20)
@@ -45,13 +60,21 @@ struct StudyTimerView: View {
                          })
                         
                         Button(action: {
-                            StudyTimerVM.isStarted = true
-                         },
+                            if (!StudyTimerVM.isStarted) {
+                                StudyTimerVM.isStarted = true
+                                //StudyTimerVM.isStartButton = true
+                                //StudyTimerVM.isCancelButton = false
+                            } else {
+                                StudyTimerVM.cancelTimer()
+                                //StudyTimerVM.isCancelButton = true
+                                //StudyTimerVM.isStartButton = false
+                            }
+                        },
                              label: {
-                            Text("Start")
+                            Text(StudyTimerVM.isStarted ? "Cancel" : "Start")
                              .font(.system(size:20))
                              .frame(width:geo.size.width/3, height:geo.size.height/10)
-                             .background(Color.cyan)
+                             .background(StudyTimerVM.isStarted ? Color.gray : Color.cyan)
                              .foregroundColor(Color.white)
                              .clipShape(Rectangle())
                              .cornerRadius(20)
@@ -77,12 +100,24 @@ struct StudyTimerView: View {
                }
                 .animation(.easeInOut,value:StudyTimerVM.addNewTimer)
           })
-         .background(Color(.black))
+         .background(Color("BG_2"))
          .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-             if StudyTimerVM.isStarted {
+             if StudyTimerVM.isStarted && !StudyTimerVM.isPaused{
                  StudyTimerVM.startTimer()
              }
              
+         }
+         .alert(isPresented: $StudyTimerVM.isFinished) {
+            Alert(
+                title: Text("Timer ended"),
+                message: Text("Hurra, you finished studying.\nTake a break and come back later."),
+                dismissButton: .default(
+                    Text("OK"),
+                    action: {
+                        StudyTimerVM.resetTimer()
+                    }
+                )
+            )
          }
     }
     
@@ -168,7 +203,7 @@ struct StudyTimerView: View {
         .frame(maxWidth:.infinity)
         .background{
             RoundedRectangle(cornerRadius:10, style:.continuous)
-                .fill(Color("BG"))
+                .fill(Color("BG_2"))
                 .ignoresSafeArea()
         }
     }
