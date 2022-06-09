@@ -24,6 +24,8 @@ class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterD
     
     @Published var totalSeconds = 0
     @Published var saveTotalSeconds = 0
+    @Published var notificationTimer = 0
+    
     @Published var hour     :Int=0
     @Published var minute   :Int=0
     @Published var seconds  :Int=0
@@ -48,6 +50,9 @@ class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterD
     
     func startTimer(){
         isFinished = false
+        if ( totalSeconds == notificationTimer){
+            addNotification()
+        }
         totalSeconds-=1
         hour = totalSeconds/3600
         minute = (totalSeconds/60) % 60
@@ -58,7 +63,6 @@ class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterD
             isFinished = true
         }
         gifName = gifLoader()
-        addNotification()
     }
     
     
@@ -67,6 +71,7 @@ class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterD
         totalSeconds=(hour*3600)+(minute*60)+seconds
         saveTimerStringValue = timerStringValue
         saveTotalSeconds = totalSeconds
+        notificationTimer = totalSeconds
         isFinished = false
         gifName = gifLoader()
     }
@@ -84,8 +89,10 @@ class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterD
     }
     
     func gifLoader() -> String {
-
-        if (!isStarted && !isFinished) {
+        
+        if (isPaused) {
+            return "load2"
+        }else if (!isStarted && !isFinished) {
             return "load0"
         } else if (!isStarted && isFinished){
             return "load4"
@@ -108,16 +115,28 @@ class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterD
         }
     }
     
+    func pauseTimer(){
+        isPaused = true
+        notificationTimer = totalSeconds
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        gifName = gifLoader()
+    }
+    
+    func resumeTimer(){
+        isPaused = false
+        gifName = gifLoader()
+    }
+    
     func addNotification(){
         let content = UNMutableNotificationContent()
         content.title = "StudyBrain"
         content.subtitle = "Hurra, you finished studying."
         content.sound=UNNotificationSound.default
         let request=UNNotificationRequest(identifier:UUID().uuidString,content:content,trigger:
-            UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(saveTotalSeconds), repeats:false))
+            UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(notificationTimer), repeats:false))
         
         UNUserNotificationCenter.current().add(request)
     }
 }
 
-//TODO : when clicking on navigationslink timer stops
+//TODO : when clicking on navigations back button, view of Study Timer will be resetted ?Solution?

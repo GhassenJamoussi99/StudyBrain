@@ -21,13 +21,15 @@ struct StudyTimerView: View {
             
             GeometryReader { geo in
                 VStack {
-                    //GifImage is a static view so we need multiple objects instantiation to update them
+                    //GifImage lib is a static view so we need multiple objects instantiation to update the GIF
                     HStack{
-                        if (StudyTimerVM.gifName == "load0" ) {
+                        if (StudyTimerVM.gifName == "load0" ) { //not started yet
                           GifImage(StudyTimerVM.gifName)
-                        } else if (StudyTimerVM.gifName == "load4" ) {
+                        } else if (StudyTimerVM.gifName == "load2" ) { //is paused
                           GifImage(StudyTimerVM.gifName)
-                        } else if (StudyTimerVM.gifName == "brain_loader") {
+                        } else if (StudyTimerVM.gifName == "load4" ) { //is finished
+                          GifImage(StudyTimerVM.gifName)
+                        } else if (StudyTimerVM.gifName == "brain_loader") { //timer is working
                           GifImage(StudyTimerVM.gifName)
                         }
                     }.frame(width: geo.size.width/2,height:geo.size.height/2)
@@ -41,9 +43,9 @@ struct StudyTimerView: View {
                     HStack {
                         Button(action: {
                             if StudyTimerVM.isStarted && !StudyTimerVM.isPaused {
-                                StudyTimerVM.isPaused = true
-                            } else if StudyTimerVM.isPaused == true {
-                                StudyTimerVM.isPaused = false
+                                StudyTimerVM.pauseTimer()
+                            } else if StudyTimerVM.isPaused {
+                                StudyTimerVM.resumeTimer()
                             } else {
                                 StudyTimerVM.addNewTimer = true //invoke add new timer window
                             }
