@@ -14,6 +14,7 @@
 		C7B0054928520E9C00323E1D /* load2.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B0054828520E9C00323E1D /* load2.gif */; };
 		C7B0054B2852118700323E1D /* MindGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0054A2852118700323E1D /* MindGamesView.swift */; };
 		C7B0054D2852119500323E1D /* MemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0054C2852119500323E1D /* MemoryGameView.swift */; };
+		C7B0055128523D1100323E1D /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0055028523D1100323E1D /* MemoryGameViewModel.swift */; };
 		C7D97B55284F9DD50063762B /* final_projectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D97B54284F9DD50063762B /* final_projectApp.swift */; };
 		C7D97B57284F9DD50063762B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D97B56284F9DD50063762B /* ContentView.swift */; };
 		C7D97B59284F9DD60063762B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D97B58284F9DD60063762B /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		C7B0054828520E9C00323E1D /* load2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load2.gif; sourceTree = "<group>"; };
 		C7B0054A2852118700323E1D /* MindGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindGamesView.swift; sourceTree = "<group>"; };
 		C7B0054C2852119500323E1D /* MemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameView.swift; sourceTree = "<group>"; };
+		C7B0055028523D1100323E1D /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
 		C7D97B51284F9DD50063762B /* final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D97B54284F9DD50063762B /* final_projectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = final_projectApp.swift; sourceTree = "<group>"; };
 		C7D97B56284F9DD50063762B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */,
+				C7B0055028523D1100323E1D /* MemoryGameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C7D97B57284F9DD50063762B /* ContentView.swift in Sources */,
 				C7D97B55284F9DD50063762B /* final_projectApp.swift in Sources */,
 				C7B0054B2852118700323E1D /* MindGamesView.swift in Sources */,
+				C7B0055128523D1100323E1D /* MemoryGameViewModel.swift in Sources */,
 				C7B00547285202A800323E1D /* GifImage.swift in Sources */,
 				C7D97B81284FC90B0063762B /* StudyTimerViewModel.swift in Sources */,
 				C7B0054D2852119500323E1D /* MemoryGameView.swift in Sources */,

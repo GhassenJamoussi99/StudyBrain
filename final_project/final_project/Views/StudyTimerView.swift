@@ -9,7 +9,6 @@ import SwiftUI
 struct StudyTimerView: View {
     @StateObject var StudyTimerVM  = StudyTimerViewModel()
     
-    
     var body: some View {
         VStack {
             HStack{

@@ -32,7 +32,7 @@ struct MindGamesView: View {
              //Buttons
              HStack(alignment: .center)
              {
-                NavigationLink(destination: Text("Memory Game"), isActive: self.$navigateToMemoryGame) { EmptyView() }
+                NavigationLink(destination: MemoryGameView(), isActive: self.$navigateToMemoryGame) { EmptyView() }
                 Button(action: {
                     self.navigateToMemoryGame = true
                     }, label: {

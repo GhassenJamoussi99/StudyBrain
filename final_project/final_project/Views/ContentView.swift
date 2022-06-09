@@ -95,7 +95,7 @@ struct ContentView: View {
                  }.padding(10)
                 
                  Spacer()
-               }.background(Image("brain_img"))
+               }.background(Image("brain_bg"))
                 .navigationBarTitle("Back", displayMode: .inline)
             }
         }
