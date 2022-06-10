@@ -18,7 +18,7 @@ enum states {
 class MemoryGameViewModel: ObservableObject {
     let rowRange = 5
     let columnRange = 5
-    let seconds = 5.0
+    let seconds = 3.0
     var numberOfMistakes = 0
 
     @Published var spielBrett: [String?] = Array(repeating:nil, count:25)

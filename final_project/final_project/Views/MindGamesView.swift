@@ -48,7 +48,7 @@ struct MindGamesView: View {
             
              HStack(alignment: .center)
              {
-                NavigationLink(destination: Text("Concentration Game"), isActive: self.$navigateToConcentrationGame) { EmptyView() }
+                NavigationLink(destination: ConcentrationGameView(), isActive: self.$navigateToConcentrationGame) { EmptyView() }
                 Button(action: {
                     self.navigateToConcentrationGame = true
                     }, label: {

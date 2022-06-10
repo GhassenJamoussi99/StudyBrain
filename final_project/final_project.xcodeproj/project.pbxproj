@@ -24,6 +24,8 @@
 		C7D97B72284F9DD70063762B /* final_projectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D97B71284F9DD70063762B /* final_projectUITestsLaunchTests.swift */; };
 		C7D97B7F284FBD110063762B /* StudyTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D97B7E284FBD110063762B /* StudyTimerView.swift */; };
 		C7D97B81284FC90B0063762B /* StudyTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */; };
+		C7D9E3D22853DC2B00712C70 /* ConcentrationGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9E3D12853DC2B00712C70 /* ConcentrationGameView.swift */; };
+		C7D9E3D52853FF6B00712C70 /* ConcentrationGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9E3D42853FF6B00712C70 /* ConcentrationGameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		C7D97B71284F9DD70063762B /* final_projectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = final_projectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7D97B7E284FBD110063762B /* StudyTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimerView.swift; sourceTree = "<group>"; };
 		C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimerViewModel.swift; sourceTree = "<group>"; };
+		C7D9E3D12853DC2B00712C70 /* ConcentrationGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGameView.swift; sourceTree = "<group>"; };
+		C7D9E3D42853FF6B00712C70 /* ConcentrationGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				C7B0054C2852119500323E1D /* MemoryGameView.swift */,
 				C7B0054A2852118700323E1D /* MindGamesView.swift */,
 				C7D97B7E284FBD110063762B /* StudyTimerView.swift */,
+				C7D9E3D12853DC2B00712C70 /* ConcentrationGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			children = (
 				C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */,
 				C7B0055028523D1100323E1D /* MemoryGameViewModel.swift */,
+				C7D9E3D42853FF6B00712C70 /* ConcentrationGameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -327,10 +333,12 @@
 				C7D97B55284F9DD50063762B /* final_projectApp.swift in Sources */,
 				C7B0054B2852118700323E1D /* MindGamesView.swift in Sources */,
 				C7B0055128523D1100323E1D /* MemoryGameViewModel.swift in Sources */,
+				C7D9E3D52853FF6B00712C70 /* ConcentrationGameViewModel.swift in Sources */,
 				C7B00547285202A800323E1D /* GifImage.swift in Sources */,
 				C7D97B81284FC90B0063762B /* StudyTimerViewModel.swift in Sources */,
 				C7B0054D2852119500323E1D /* MemoryGameView.swift in Sources */,
 				C7D97B7F284FBD110063762B /* StudyTimerView.swift in Sources */,
+				C7D9E3D22853DC2B00712C70 /* ConcentrationGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
