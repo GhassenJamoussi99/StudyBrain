@@ -92,6 +92,8 @@ class ConcentrationGameViewModel: ObservableObject {
 
     func startTimer() {
         //for timer output
+        if (!self.gameOver)
+        {
         self.timer = Timer.publish(every: 1, on: .main, in: .common)
                 .autoconnect()
                 .sink { _ in
@@ -103,27 +105,37 @@ class ConcentrationGameViewModel: ObservableObject {
                             self.calculateScore()
                         }
                     }
+            }
     }
     
     func calculateScore() {
-        if (self.falseCases == 0) {
-            self.resultText = "You seem to be very focused. Congrats\n "
-        } else if (self.falseCases > 0 && self.falseCases < 3){
-            self.resultText = "Minor mistakes but still, well done\n"
-        } else if (self.falseCases >= 4 && self.falseCases < 10){
-            self.resultText = "Hmm, are you sober? \n"
+        if (self.correctCases >= 5)
+        {
+            if (self.falseCases == 0 ) {
+                self.resultText = "You seem to be very focused, Congrats\n "
+            } else {
+                self.resultText = "Minor mistakes but still, well done\n"
+            }
         } else {
-            self.resultText = "Are you sure you understand the game?\n"
+            if (self.falseCases == 0 ) {
+                self.resultText = "Not bad but you can do better\n"
+            } else if (self.falseCases >= 1 && self.falseCases <= 3){
+                self.resultText = "You need more focus\n"
+            } else if (self.falseCases >= 4 && self.falseCases < 6){
+                self.resultText = "Hm are you sober?\n"
+            } else {
+                self.resultText = "Did you understand the game?\n"
+            }
         }
         
-        self.resultText += "Score\n\(self.correctCases) correct case(s)\n\(self.falseCases) false case(s)"
+        self.resultText += "Score:\n\(self.correctCases) correct case(s)\n\(self.falseCases) false case(s)"
     }
     
     func resetGame() {
         textRandomColor = ""
         correctCases = 0
         falseCases = 0
-        gameTimer = 0
+        gameTimer = 10
         resultText = ""
         firstText = ""
         secondText = ""
