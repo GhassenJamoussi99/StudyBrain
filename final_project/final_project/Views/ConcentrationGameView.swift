@@ -7,8 +7,7 @@
 import SwiftUI
 
 struct ConcentrationGameView: View {
-   //@StateObject var ConcentrationGameVM  = ConcentrationGameVMGameViewModel()
-    @State var isStartVisible:Bool = true
+    @StateObject var ConcentrationGameVM  = ConcentrationGameViewModel()
     
     var body: some View {
       GeometryReader{ geo in
@@ -28,24 +27,32 @@ struct ConcentrationGameView: View {
                     .foregroundColor(Color.white)
                  }
                 
+                HStack{
+                    Text("Time left : \(ConcentrationGameVM.gameTimer)")
+                    .font(.system(size: 20))
+                    .foregroundColor(Color.red)
+                 }
+                
             }.frame(maxWidth:.infinity, maxHeight: .infinity, alignment: .top)
             
             //Show 2 windows
             HStack(alignment: .center, spacing:10) {
                 Spacer()
-                    Text("test1")
+                Text(ConcentrationGameVM.firstText!)
                     .font(.system(size:30))
+                    .bold()
                     .frame(width:geo.size.width/2 - 20, height:geo.size.height/4)
                     .background(Color.white)
                     .foregroundColor(Color.black)
                     .clipShape(Rectangle())
                     .cornerRadius(10)
                 
-                    Text("test2")
+                Text(ConcentrationGameVM.secondText!)
                     .font(.system(size:30))
+                    .bold()
                     .frame(width:geo.size.width/2 - 20, height:geo.size.height/4)
                     .background(Color.white)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(ConcentrationGameVM.randomColor)
                     .clipShape(Rectangle())
                     .cornerRadius(10)
                     .padding(.leading,1)
@@ -78,7 +85,7 @@ struct ConcentrationGameView: View {
                 Spacer()
                 HStack{
                     Button(action: {
-                        isStartVisible = false
+                        ConcentrationGameVM.isStartClicked()
                     }, label: {
                     Text("Start")
                         .font(.system(size:30))
@@ -87,19 +94,14 @@ struct ConcentrationGameView: View {
                         .foregroundColor(Color.white)
                         .clipShape(Rectangle())
                         .cornerRadius(10)
-                    }).frame(height: isStartVisible ? nil : 0)
-                      .disabled(!isStartVisible)
+                    }).frame(height: ConcentrationGameVM.isStartVisible ? nil : 0)
+                        .disabled(!ConcentrationGameVM.isStartVisible)
                 }.frame(maxHeight: .infinity, alignment: .bottom)
                 //////////////////////////////////////////////////////////////////////////////
                 //True/False buttons
                 HStack(alignment: .center){
                     Button(action: {
-                    /*if !MemoryGameVM.isStarted {
-                        MemoryGameVM.startClicked()
-                    } else {
-                        MemoryGameVM.checkSubmission()
-                    }
-                    */
+                       ConcentrationGameVM.isTrueClicked()
                     }, label: {
                     Text("True")
                         .font(.system(size:30))
@@ -108,16 +110,11 @@ struct ConcentrationGameView: View {
                         .foregroundColor(Color.white)
                         .clipShape(Rectangle())
                         .cornerRadius(10)
-                    }).frame(height: isStartVisible ? 0 : nil)
-                        .disabled(isStartVisible)
+                    }).frame(height: ConcentrationGameVM.isStartVisible ? 0 : nil)
+                        .disabled(ConcentrationGameVM.isStartVisible)
 
                     Button(action: {
-                    /*if !MemoryGameVM.isStarted {
-                        MemoryGameVM.startClicked()
-                    } else {
-                        MemoryGameVM.checkSubmission()
-                    }
-                    */
+                        ConcentrationGameVM.isFalseClicked()
                     }, label: {
                     Text("False")
                         .font(.system(size:30))
@@ -127,8 +124,8 @@ struct ConcentrationGameView: View {
                         .clipShape(Rectangle())
                         .cornerRadius(10)
                     })
-                      .frame(height: isStartVisible ? 0 : nil)
-                      .disabled(isStartVisible)
+                    .frame(height: ConcentrationGameVM.isStartVisible ? 0 : nil)
+                    .disabled(ConcentrationGameVM.isStartVisible)
 
                 }
                 Spacer()
@@ -137,7 +134,37 @@ struct ConcentrationGameView: View {
           }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.center)
             .background(.black)
             .navigationBarTitle("Back")
-     }
+            .overlay(content:{
+                    ZStack{
+                    Color.black
+                        .opacity(ConcentrationGameVM.isChecking ? 0.25 : 0)
+                        .onTapGesture {
+                            //dismiss result view
+                            ConcentrationGameVM.isChecking = false
+                        }
+                    
+                        Image( ConcentrationGameVM.result ? "tick_mark": "x_mark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxHeight:.infinity,alignment:.center)
+                            .frame(height: ConcentrationGameVM.isChecking ? nil : 0)
+                }
+                .animation(.easeInOut,value:ConcentrationGameVM.isChecking)
+             })
+        }.alert(isPresented: $ConcentrationGameVM.gameOver) {
+            Alert(
+                title: Text("Final score"),
+                message: Text(ConcentrationGameVM.resultText),
+                primaryButton: .default(
+                    Text("Try Again"),
+                    action: ConcentrationGameVM.isStartClicked
+                ),
+                secondaryButton: .destructive(
+                    Text("Cancel"),
+                    action: ConcentrationGameVM.resetGame
+                )
+            )
+         }
     }
     
     @ViewBuilder
