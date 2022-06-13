@@ -10,7 +10,7 @@
 		C716F2EA2856BC9200555D35 /* LinuxQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716F2E92856BC9200555D35 /* LinuxQuizView.swift */; };
 		C716F2EC2856BCF100555D35 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716F2EB2856BCF100555D35 /* QuizViewModel.swift */; };
 		C7467D7E2856494C00792A80 /* jsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D7D2856494C00792A80 /* jsonDecoder.swift */; };
-		C7467D8028566FC700792A80 /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D7F28566FC700792A80 /* questions.swift */; };
+		C7467D8028566FC700792A80 /* SQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D7F28566FC700792A80 /* SQuestions.swift */; };
 		C7467D82285670C300792A80 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D81285670C300792A80 /* ModelData.swift */; };
 		C7467D84285676D700792A80 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D83285676D700792A80 /* QuizView.swift */; };
 		C74B357128572AB400C76BB9 /* linux_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = C74B357028572AB400C76BB9 /* linux_questions.json */; };
@@ -56,7 +56,7 @@
 		C716F2E92856BC9200555D35 /* LinuxQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxQuizView.swift; sourceTree = "<group>"; };
 		C716F2EB2856BCF100555D35 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		C7467D7D2856494C00792A80 /* jsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonDecoder.swift; sourceTree = "<group>"; };
-		C7467D7F28566FC700792A80 /* questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
+		C7467D7F28566FC700792A80 /* SQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQuestions.swift; sourceTree = "<group>"; };
 		C7467D81285670C300792A80 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		C7467D83285676D700792A80 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		C74B357028572AB400C76BB9 /* linux_questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = linux_questions.json; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			children = (
 				C74B356F28572A3500C76BB9 /* questions */,
 				C7467D7D2856494C00792A80 /* jsonDecoder.swift */,
-				C7467D7F28566FC700792A80 /* questions.swift */,
+				C7467D7F28566FC700792A80 /* SQuestions.swift */,
 				C7467D81285670C300792A80 /* ModelData.swift */,
 			);
 			path = QuizApi;
@@ -368,7 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7467D7E2856494C00792A80 /* jsonDecoder.swift in Sources */,
-				C7467D8028566FC700792A80 /* questions.swift in Sources */,
+				C7467D8028566FC700792A80 /* SQuestions.swift in Sources */,
 				C7D97B57284F9DD50063762B /* ContentView.swift in Sources */,
 				C716F2EC2856BCF100555D35 /* QuizViewModel.swift in Sources */,
 				C7467D82285670C300792A80 /* ModelData.swift in Sources */,

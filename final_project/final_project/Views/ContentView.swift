@@ -107,3 +107,8 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
+//TODO : change figure(nil) to opacity(0)
+//       Remove unnecessary optional values

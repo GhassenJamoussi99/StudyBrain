@@ -8,16 +8,26 @@
 import SwiftUI
 import Foundation
 
+struct SAnswersStates{
+    var answer_a: Bool
+    var answer_b: Bool
+    var answer_c: Bool
+    var answer_d: Bool
+    var answer_e: Bool
+    var answer_f: Bool
+}
+
 class QuizViewModel: ObservableObject {
     @Published var tenRandomIDQuestions: [Int] = []
-    @Published var tenRandomIDQuestionsStates: [Bool?] = Array(repeating:false, count:10)
+    @Published var tenRandomIDQuestionsStates: [SAnswersStates] = Array(repeating:SAnswersStates(answer_a: false,answer_b: false,answer_c: false,answer_d: false,answer_e: false,answer_f: false), count:10)
+    //@Published var all_answers_states: [Bool?] = Array(repeating:false, count:6)
     @Published var jsonCategory: String = ""
     @Published var questions: [SQuestions]?
-    //@Published var tenRandomQuestions: SQuestions?
+    @Published var isSubmitted: Bool = false
+    @Published var showSubmit: Bool = false
 
     @Published var indexRandomQuestion: Int = 0
     @Published var indexQuestion: Int = 0
-
 
     var availableIDs: [Int] = []
 
@@ -44,39 +54,66 @@ class QuizViewModel: ObservableObject {
          print(tenRandomIDQuestions)
     }
 
-    func isStartClicked() {
-
-    }
-
-    func randomText() {
-    }
-
-    func calculateScore() {
-    }
-
-    func questPerQuest() {
-
-    }
-
-    func getQuestionIndexInArray() -> Int {
+    func setNeededQuestionIndex() {
         let item = self.tenRandomIDQuestions[indexRandomQuestion]
-        return self.questions!.firstIndex(where: { $0.id == item })!
+        indexQuestion = self.questions!.firstIndex(where: { $0.id == item })!
     }
 
     func isNextClicked() {
         if (indexRandomQuestion < 9) {
           indexRandomQuestion += 1
+          self.checkSubmitStatus()
+          print("indexRandomQuestion = ",indexRandomQuestion)
+          self.setNeededQuestionIndex()
         }
     }
 
     func isPreviousClicked() {
         if (indexRandomQuestion != 0) {
             indexRandomQuestion -= 1
+            self.checkSubmitStatus()
+            self.setNeededQuestionIndex()
         }
     }
     
-    func resetGame() {
+    func checkSubmitStatus() {
+        if (indexRandomQuestion >= 9) {
+          self.showSubmit = true
+        } else {
+          self.showSubmit = false
+        }
     }
+    
+    func isNextAllowed() -> Bool {
+        print("isNextAllowed ?")
+        if (indexRandomQuestion >= 9) {
+          return false
+        } else {
+          print("Next is allowed")
+          return true
+        }
+    }
+    
+    func isPreviousAllowed() -> Bool {
+        if (indexRandomQuestion <= 0) {
+          return false
+        } else {
+          return true
+        }
+    }
+    
+    func resetCheckBoxes() {
+        tenRandomIDQuestionsStates = Array(repeating:SAnswersStates(answer_a: false,answer_b: false,answer_c: false,answer_d: false,answer_e: false,answer_f: false), count:10)
+    }
+    
+    func calculateScore() {
+    }
+
+    
+    func resetGame() {
+        self.resetCheckBoxes()
+    }
+    
 }
 
 //make this generic for all quizzes
