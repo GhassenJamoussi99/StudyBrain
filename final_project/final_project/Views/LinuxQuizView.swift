@@ -51,7 +51,7 @@ struct LinuxQuizView: View {
                  .padding(.bottom,5)
                 
                 Button(action: {
-                   //todo
+                    QuizVM.isSubmitClicked()
                 }, label: {
                 Text("Submit")
                     .font(.system(size:15))
@@ -107,7 +107,7 @@ struct LinuxQuizView: View {
       VStack {
           
             HStack{
-                Text(QuizVM.questions![QuizVM.indexQuestion].question)
+                Text(QuizVM.questions[QuizVM.indexQuestion].question)
                     .font(.system(size:15))
                     .bold()
                     .foregroundColor(Color.black)
@@ -117,14 +117,14 @@ struct LinuxQuizView: View {
              .padding(.bottom,5)
           
             HStack{
-                if (QuizVM.questions![QuizVM.indexQuestion].answers.answer_a != nil ) {
+                if (QuizVM.questions[QuizVM.indexQuestion].answers.answer_a != nil ) {
                     Image(systemName: QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_a ? "checkmark.square.fill" : "square")
                         .foregroundColor(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_a  ? Color(UIColor.systemBlue) : Color.secondary)
                             .onTapGesture {
                                 QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_a.toggle()
                             }
                     
-                    Text(QuizVM.questions![QuizVM.indexQuestion].answers.answer_a!)
+                    Text("a.  \(QuizVM.questions[QuizVM.indexQuestion].answers.answer_a!)")
                             .font(.system(size:15))
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
@@ -134,14 +134,14 @@ struct LinuxQuizView: View {
               .padding(.bottom,5)
 
             HStack{
-                if (QuizVM.questions![QuizVM.indexQuestion].answers.answer_b != nil ) {
+                if (QuizVM.questions[QuizVM.indexQuestion].answers.answer_b != nil ) {
                     Image(systemName: QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_b ? "checkmark.square.fill" : "square")
                         .foregroundColor(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_b  ? Color(UIColor.systemBlue) : Color.secondary)
                             .onTapGesture {
                                 QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_b.toggle()
                             }
                     
-                    Text(QuizVM.questions![QuizVM.indexQuestion].answers.answer_b!)
+                    Text("b.  \(QuizVM.questions[QuizVM.indexQuestion].answers.answer_b!)")
                             .font(.system(size:15))
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
@@ -151,14 +151,14 @@ struct LinuxQuizView: View {
               .padding(.bottom,5)
 
             HStack{
-                if (QuizVM.questions![QuizVM.indexQuestion].answers.answer_c != nil ) {
+                if (QuizVM.questions[QuizVM.indexQuestion].answers.answer_c != nil ) {
                     Image(systemName: QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_c ? "checkmark.square.fill" : "square")
                         .foregroundColor(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_c  ? Color(UIColor.systemBlue) : Color.secondary)
                             .onTapGesture {
                                 QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_c.toggle()
                             }
                     
-                    Text(QuizVM.questions![QuizVM.indexQuestion].answers.answer_c!)
+                    Text("c.  \(QuizVM.questions[QuizVM.indexQuestion].answers.answer_c!)")
                             .font(.system(size:15))
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
@@ -169,14 +169,14 @@ struct LinuxQuizView: View {
 
                         
             HStack{
-                if (QuizVM.questions![QuizVM.indexQuestion].answers.answer_d != nil ) {
+                if (QuizVM.questions[QuizVM.indexQuestion].answers.answer_d != nil ) {
                     Image(systemName: QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_d ? "checkmark.square.fill" : "square")
                         .foregroundColor(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_d  ? Color(UIColor.systemBlue) : Color.secondary)
                             .onTapGesture {
                                 QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_d.toggle()
                             }
                     
-                    Text(QuizVM.questions![QuizVM.indexQuestion].answers.answer_d!)
+                    Text("d.  \(QuizVM.questions[QuizVM.indexQuestion].answers.answer_d!)")
                             .font(.system(size:15))
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
@@ -187,14 +187,14 @@ struct LinuxQuizView: View {
 
 
             HStack{
-                if (QuizVM.questions![QuizVM.indexQuestion].answers.answer_e != nil ) {
+                if (QuizVM.questions[QuizVM.indexQuestion].answers.answer_e != nil ) {
                     Image(systemName: QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_e ? "checkmark.square.fill" : "square")
                         .foregroundColor(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_e  ? Color(UIColor.systemBlue) : Color.secondary)
                             .onTapGesture {
                                 QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_e.toggle()
                             }
                     
-                    Text(QuizVM.questions![QuizVM.indexQuestion].answers.answer_e!)
+                    Text("e.  \(QuizVM.questions[QuizVM.indexQuestion].answers.answer_e!)")
                             .font(.system(size:15))
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
@@ -205,18 +205,23 @@ struct LinuxQuizView: View {
 
                         
             HStack{
-                if (QuizVM.questions![QuizVM.indexQuestion].answers.answer_f != nil ) {
+                if (QuizVM.questions[QuizVM.indexQuestion].answers.answer_f != nil ) {
                     Image(systemName: QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f ? "checkmark.square.fill" : "square")
                         .foregroundColor(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f  ? Color(UIColor.systemBlue) : Color.secondary)
                             .onTapGesture {
                                 QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f.toggle()
                             }
                     
-                    Text(QuizVM.questions![QuizVM.indexQuestion].answers.answer_f!)
+                    Text("f.  \(QuizVM.questions[QuizVM.indexQuestion].answers.answer_f!)")
                             .font(.system(size:15))
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
 
+                    //Show if correct or not
+                    Text(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f ? (QuizVM.isUserAnswerForFCorrect() ?  "✓" : "X" ): "")
+                            .font(.system(size:15))
+                            .foregroundColor(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f ? (QuizVM.isUserAnswerForFCorrect() ?  Color.green : Color.red): Color.white)
+                            .fixedSize(horizontal: false, vertical: true)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
               .padding(.bottom,5)
@@ -227,7 +232,8 @@ struct LinuxQuizView: View {
 
 /*
 TODO: See how to make the viewBuilder simpler especially with the if statement (isEmpty)
-                ForEach(questions) { question in
-                        Text("\(question.question) is a \(question.id)")
-                    }
+      simplify these values : QuizVM.questions[QuizVM.indexQuestion].answers.answer_f
+          Example : store them in a variable in the view model then call them in this view file
+
+          X ✓
 */

@@ -17,12 +17,12 @@ struct SAnswers : Decodable{
 }
 
 struct SCorrectAnswers : Decodable{
-    var answer_a_correct: Bool
-    var answer_b_correct: Bool
-    var answer_c_correct: Bool
-    var answer_d_correct: Bool
-    var answer_e_correct: Bool
-    var answer_f_correct: Bool
+    var answer_a_correct: String?
+    var answer_b_correct: String?
+    var answer_c_correct: String?
+    var answer_d_correct: String?
+    var answer_e_correct: String?
+    var answer_f_correct: String?
 }
 
 

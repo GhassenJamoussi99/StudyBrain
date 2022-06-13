@@ -63,10 +63,11 @@ struct MemoryGameView: View {
                 }
                 
                 HStack(alignment: .center) {
-                    Text(MemoryGameVM.showGuide ? "Remember the pattern" : "")
+                    Text("Remember the pattern")
                         .font(.system(size:30))
                         .foregroundColor(Color.white)
                         .fixedSize()
+                        .opacity(MemoryGameVM.showGuide ? 1 : 0)
                 }.frame(maxWidth: .infinity, alignment: .center)
                 
                 //Start button

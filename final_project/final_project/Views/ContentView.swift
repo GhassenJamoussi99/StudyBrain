@@ -112,3 +112,5 @@ struct ContentView_Previews: PreviewProvider {
 
 //TODO : change figure(nil) to opacity(0)
 //       Remove unnecessary optional values
+//       navigation link solution : environemnt object maybe ?
+//        change Add Timer buttons ?
