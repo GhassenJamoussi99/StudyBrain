@@ -1,0 +1,663 @@
+[
+    {
+        "id": 46,
+        "question": "Which of the following answers refers to a software tool used for searching and installing software packages on Debian and Debian-based Linux distributions?",
+        "description": null,
+        "answers": {
+            "answer_a": "rpm",
+            "answer_b": "apt-rpm",
+            "answer_c": "yum",
+            "answer_d": "apt-get",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "true",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_d",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 699,
+        "question": "How are devices represented in UNIX\/Linux?",
+        "description": null,
+        "answers": {
+            "answer_a": "For UNIX\/Linux every device is a file and are typically located in the directory \/dev.",
+            "answer_b": "For UNIX\/Linux every device is a block and are typically located in the directory \/dev.",
+            "answer_c": "For UNIX\/Linux every device is a file and are typically located in the directory \/proc.",
+            "answer_d": "For UNIX\/Linux every device is a block and are typically located in the directory \/proc.",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "BASH"
+            },
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 33,
+        "question": "In Linux, the priority of a running process can be changed using which command?",
+        "description": null,
+        "answers": {
+            "answer_a": "priority",
+            "answer_b": "renice",
+            "answer_c": "ps -A",
+            "answer_d": "passwd",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "true",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 708,
+        "question": "How can we redirect the output of one command to the another command?",
+        "description": null,
+        "answers": {
+            "answer_a": "Place the commands connected with pipes (|).",
+            "answer_b": "Use the Xargs command",
+            "answer_c": "Use the stdin and stdout",
+            "answer_d": "Use the numbers 1 and 2 for standart input(stdin) and standart output(stdout)",
+            "answer_e": "Both commands which include stdin and stdout",
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "BASH"
+            },
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 1080,
+        "question": "Which command do we need to use if we want to see all packages installed on the system (Ubuntu)",
+        "description": null,
+        "answers": {
+            "answer_a": "dpkg -l",
+            "answer_b": "packageall -l",
+            "answer_c": "dpkg -a",
+            "answer_d": null,
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 38,
+        "question": "To inspect the the boot process of a Linux system, which command can be used?",
+        "description": null,
+        "answers": {
+            "answer_a": "boot",
+            "answer_b": "dmesg",
+            "answer_c": "cat \/var\/log\/start",
+            "answer_d": "cat \/var\/log\/boot.txt",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "true",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 1070,
+        "question": "What will happen If you run the command \"init 1\" in your terminal",
+        "description": null,
+        "answers": {
+            "answer_a": "Reboot the system",
+            "answer_b": "Shut down the system",
+            "answer_c": "Enter single user mode",
+            "answer_d": "Start the system without a display manager (GUI)",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "false",
+            "answer_c_correct": "true",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 489,
+        "question": "Which Element Represents A Control For Generating A Public-private Key Pair?",
+        "description": null,
+        "answers": {
+            "answer_a": "Keygen",
+            "answer_b": "Key",
+            "answer_c": "Command",
+            "answer_d": "Ins",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            },
+            {
+                "name": "BASH"
+            }
+        ],
+        "category": "Code",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 10,
+        "question": "Which of the following is a command in Linux?",
+        "description": null,
+        "answers": {
+            "answer_a": "w",
+            "answer_b": "x",
+            "answer_c": "t",
+            "answer_d": "All of the Above",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 711,
+        "question": "Are arrays supported in shell scripts?",
+        "description": null,
+        "answers": {
+            "answer_a": "True",
+            "answer_b": "False",
+            "answer_c": "Yes but only under certain conditions",
+            "answer_d": null,
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "BASH"
+            },
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 13,
+        "question": "What command, followed by the directory name is used to access that specific directory?",
+        "description": null,
+        "answers": {
+            "answer_a": "cp",
+            "answer_b": "cd",
+            "answer_c": "access",
+            "answer_d": "acs",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "true",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 683,
+        "question": "Expand UFS in context of file system?",
+        "description": null,
+        "answers": {
+            "answer_a": "UNIX File system.",
+            "answer_b": "Linux File System.",
+            "answer_c": "Plain File System.",
+            "answer_d": "Linux Failing System.",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "BASH"
+            },
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 48,
+        "question": "Which of the answers listed below refers to a command used for invoking a text editor in Unix-like operating systems?",
+        "description": null,
+        "answers": {
+            "answer_a": "edit",
+            "answer_b": "notepad",
+            "answer_c": "vi",
+            "answer_d": "bcdedit",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "false",
+            "answer_c_correct": "true",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_c",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 31,
+        "question": "What command is used to count the total number of lines, words, and characters contained in a file?",
+        "description": null,
+        "answers": {
+            "answer_a": "count p",
+            "answer_b": "wc",
+            "answer_c": "wcount",
+            "answer_d": "countw",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "true",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 695,
+        "question": "Which command can be used to change file access permission bits?",
+        "description": null,
+        "answers": {
+            "answer_a": "chmod",
+            "answer_b": "chown",
+            "answer_c": "umask",
+            "answer_d": "chperm",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "BASH"
+            },
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 23,
+        "question": "What Linux command is the modern replacement for Telnet, and allows admins to connect to a specific network port?",
+        "description": null,
+        "answers": {
+            "answer_a": "dhclient",
+            "answer_b": "ethtool",
+            "answer_c": "ip",
+            "answer_d": "ncat",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "true",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_d",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Hard"
+    },
+    {
+        "id": 16,
+        "question": "Which command is used to create new directory?",
+        "description": null,
+        "answers": {
+            "answer_a": "dir",
+            "answer_b": "newdir",
+            "answer_c": "mkdir",
+            "answer_d": "cdir",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "false",
+            "answer_c_correct": "true",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_c",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 1073,
+        "question": "What is the default priority of the swap partition",
+        "description": null,
+        "answers": {
+            "answer_a": "0",
+            "answer_b": "-1",
+            "answer_c": "10",
+            "answer_d": "1",
+            "answer_e": "There are no priorities for swap",
+            "answer_f": "100"
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "false",
+            "answer_b_correct": "true",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Medium"
+    },
+    {
+        "id": 707,
+        "question": "Which is the environment variable which holds your home directory information?",
+        "description": null,
+        "answers": {
+            "answer_a": "HOME.",
+            "answer_b": "ROOT.",
+            "answer_c": "ADMINISTRATOR",
+            "answer_d": "It's generated dynamically",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            },
+            {
+                "name": "BASH"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    },
+    {
+        "id": 1077,
+        "question": "You are logged in as a normal user and you see a file with 444(-r--r--r--) permission. Can you delete it with the `rm` command?",
+        "description": null,
+        "answers": {
+            "answer_a": "We can't be certain, it depends on the permissions of the parent folder",
+            "answer_b": "Yes, can delete it without a problem",
+            "answer_c": "No, we don't have the proper permissions",
+            "answer_d": "We can delete it only from the GUI but not from CLI.",
+            "answer_e": null,
+            "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+            "answer_a_correct": "true",
+            "answer_b_correct": "false",
+            "answer_c_correct": "false",
+            "answer_d_correct": "false",
+            "answer_e_correct": "false",
+            "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+            {
+                "name": "Linux"
+            }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+    }
+]

@@ -66,7 +66,6 @@ class ConcentrationGameViewModel: ObservableObject {
             falseCases+=1
         }
         self.randomizeValues()
-        self.timer = nil
         self.startTimer() //Restart timer
         DispatchQueue.main.asyncAfter(deadline: .now() + self.secondsForResult) {
             self.isChecking = false //dismiss result view
@@ -83,7 +82,6 @@ class ConcentrationGameViewModel: ObservableObject {
             falseCases+=1
         }
         self.randomizeValues()
-        self.timer = nil
         self.startTimer() //Restart timer
         DispatchQueue.main.asyncAfter(deadline: .now() + self.secondsForResult) {
             self.isChecking = false //dismiss reuslt view
@@ -109,7 +107,7 @@ class ConcentrationGameViewModel: ObservableObject {
     }
     
     func calculateScore() {
-        if (self.correctCases >= 5)
+        if (self.correctCases >= 5 && self.falseCases < 3 )
         {
             if (self.falseCases == 0 ) {
                 self.resultText = "You seem to be very focused, Congrats\n "

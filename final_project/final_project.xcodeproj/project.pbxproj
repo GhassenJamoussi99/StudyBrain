@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C716F2EA2856BC9200555D35 /* LinuxQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716F2E92856BC9200555D35 /* LinuxQuizView.swift */; };
+		C716F2EC2856BCF100555D35 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716F2EB2856BCF100555D35 /* QuizViewModel.swift */; };
+		C7467D7E2856494C00792A80 /* jsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D7D2856494C00792A80 /* jsonDecoder.swift */; };
+		C7467D8028566FC700792A80 /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D7F28566FC700792A80 /* questions.swift */; };
+		C7467D82285670C300792A80 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D81285670C300792A80 /* ModelData.swift */; };
+		C7467D84285676D700792A80 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D83285676D700792A80 /* QuizView.swift */; };
+		C74B357128572AB400C76BB9 /* linux_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = C74B357028572AB400C76BB9 /* linux_questions.json */; };
 		C7B005412851F45B00323E1D /* brain_loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005402851F45B00323E1D /* brain_loader.gif */; };
 		C7B005432851F71000323E1D /* load0.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005422851F71000323E1D /* load0.gif */; };
 		C7B005452851F8A200323E1D /* load4.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005442851F8A200323E1D /* load4.gif */; };
@@ -46,6 +53,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C716F2E92856BC9200555D35 /* LinuxQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxQuizView.swift; sourceTree = "<group>"; };
+		C716F2EB2856BCF100555D35 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		C7467D7D2856494C00792A80 /* jsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonDecoder.swift; sourceTree = "<group>"; };
+		C7467D7F28566FC700792A80 /* questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
+		C7467D81285670C300792A80 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		C7467D83285676D700792A80 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		C74B357028572AB400C76BB9 /* linux_questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = linux_questions.json; sourceTree = "<group>"; };
 		C7B005402851F45B00323E1D /* brain_loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = brain_loader.gif; sourceTree = "<group>"; };
 		C7B005422851F71000323E1D /* load0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load0.gif; sourceTree = "<group>"; };
 		C7B005442851F8A200323E1D /* load4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load4.gif; sourceTree = "<group>"; };
@@ -114,6 +128,25 @@
 			path = GIFsLibrary;
 			sourceTree = "<group>";
 		};
+		C7467D7A285641A500792A80 /* QuizApi */ = {
+			isa = PBXGroup;
+			children = (
+				C74B356F28572A3500C76BB9 /* questions */,
+				C7467D7D2856494C00792A80 /* jsonDecoder.swift */,
+				C7467D7F28566FC700792A80 /* questions.swift */,
+				C7467D81285670C300792A80 /* ModelData.swift */,
+			);
+			path = QuizApi;
+			sourceTree = "<group>";
+		};
+		C74B356F28572A3500C76BB9 /* questions */ = {
+			isa = PBXGroup;
+			children = (
+				C74B357028572AB400C76BB9 /* linux_questions.json */,
+			);
+			path = questions;
+			sourceTree = "<group>";
+		};
 		C7B0054E2852399900323E1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +155,8 @@
 				C7B0054A2852118700323E1D /* MindGamesView.swift */,
 				C7D97B7E284FBD110063762B /* StudyTimerView.swift */,
 				C7D9E3D12853DC2B00712C70 /* ConcentrationGameView.swift */,
+				C7467D83285676D700792A80 /* QuizView.swift */,
+				C716F2E92856BC9200555D35 /* LinuxQuizView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +167,7 @@
 				C7D97B80284FC90B0063762B /* StudyTimerViewModel.swift */,
 				C7B0055028523D1100323E1D /* MemoryGameViewModel.swift */,
 				C7D9E3D42853FF6B00712C70 /* ConcentrationGameViewModel.swift */,
+				C716F2EB2856BCF100555D35 /* QuizViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -159,6 +195,7 @@
 		C7D97B53284F9DD50063762B /* final_project */ = {
 			isa = PBXGroup;
 			children = (
+				C7467D7A285641A500792A80 /* QuizApi */,
 				C7B0054F285239A500323E1D /* ViewModels */,
 				C7B0054E2852399900323E1D /* Views */,
 				C710599228518C270029B959 /* GIFsLibrary */,
@@ -305,6 +342,7 @@
 				C7B005432851F71000323E1D /* load0.gif in Resources */,
 				C7B005412851F45B00323E1D /* brain_loader.gif in Resources */,
 				C7D97B59284F9DD60063762B /* Assets.xcassets in Resources */,
+				C74B357128572AB400C76BB9 /* linux_questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +367,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7467D7E2856494C00792A80 /* jsonDecoder.swift in Sources */,
+				C7467D8028566FC700792A80 /* questions.swift in Sources */,
 				C7D97B57284F9DD50063762B /* ContentView.swift in Sources */,
+				C716F2EC2856BCF100555D35 /* QuizViewModel.swift in Sources */,
+				C7467D82285670C300792A80 /* ModelData.swift in Sources */,
 				C7D97B55284F9DD50063762B /* final_projectApp.swift in Sources */,
 				C7B0054B2852118700323E1D /* MindGamesView.swift in Sources */,
 				C7B0055128523D1100323E1D /* MemoryGameViewModel.swift in Sources */,
@@ -337,7 +379,9 @@
 				C7B00547285202A800323E1D /* GifImage.swift in Sources */,
 				C7D97B81284FC90B0063762B /* StudyTimerViewModel.swift in Sources */,
 				C7B0054D2852119500323E1D /* MemoryGameView.swift in Sources */,
+				C7467D84285676D700792A80 /* QuizView.swift in Sources */,
 				C7D97B7F284FBD110063762B /* StudyTimerView.swift in Sources */,
+				C716F2EA2856BC9200555D35 /* LinuxQuizView.swift in Sources */,
 				C7D9E3D22853DC2B00712C70 /* ConcentrationGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -101,7 +101,8 @@ struct StudyTimerView: View {
                }
                 .animation(.easeInOut,value:StudyTimerVM.addNewTimer)
           })
-         .background(Color("BG_2"))
+        // .background(Color("BG_2"))
+         .background(Color("Black"))
          .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
              if StudyTimerVM.isStarted && !StudyTimerVM.isPaused{
                  StudyTimerVM.startTimer()
@@ -204,7 +205,8 @@ struct StudyTimerView: View {
         .frame(maxWidth:.infinity)
         .background{
             RoundedRectangle(cornerRadius:10, style:.continuous)
-                .fill(Color("BG_2"))
+                //.fill(Color("BG_2"))
+                .fill(Color("Black"))
                 .ignoresSafeArea()
         }
     }
