@@ -42,7 +42,7 @@ struct QuizMenuView: View {
                     QuizVM.setup(jsonData: "linux_questions.json")
                     self.navigateToLinuxQuizz = true
                     }, label: {
-                        Text("Linux Quizz")
+                        Text("Linux Quiz")
                         .font(.system(size:30))
                         .frame(width:geo.size.width - geo.size.width/5, height:geo.size.height/7)
                         .background(Color.gray)
@@ -61,7 +61,7 @@ struct QuizMenuView: View {
                     QuizVM.setup(jsonData: "bash_questions.json")
                     self.navigateToBashQuizz = true
                     }, label: {
-                        Text("Bash Quizz")
+                        Text("Bash Quiz")
                         .font(.system(size:30))
                         .frame(width:geo.size.width - geo.size.width/5, height:geo.size.height/7)
                         .background(Color.gray)
@@ -80,7 +80,7 @@ struct QuizMenuView: View {
                     QuizVM.setup(jsonData: "docker_questions.json")
                     self.navigateToDockerQuizz = true
                     }, label: {
-                        Text("Docker Quizz")
+                        Text("Docker Quiz")
                         .font(.system(size:30))
                         .frame(width:geo.size.width - geo.size.width/5, height:geo.size.height/7)
                         .background(Color.gray)

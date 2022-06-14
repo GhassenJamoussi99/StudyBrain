@@ -38,6 +38,7 @@ class QuizViewModel: ObservableObject {
         self.questions = load(jsonData)
         self.storeAllIDs()
         self.randomizeQuizzes()
+        self.setNeededQuestionIndex()
     }
 
     func storeAllIDs() {
@@ -59,30 +60,32 @@ class QuizViewModel: ObservableObject {
     }
 
     func setNeededQuestionIndex() {
-        let item = self.tenRandomIDQuestions[indexRandomQuestion]
+        print("setNeeded; indexRandomQuestion = ",indexRandomQuestion)
+        let item = self.tenRandomIDQuestions[self.indexRandomQuestion]
         self.indexQuestion = self.questions.firstIndex(where: { $0.id == item })!
     }
 
     func isNextClicked() {
-        if (indexRandomQuestion < 9) {
-            indexRandomQuestion += 1
+        if (self.indexRandomQuestion < 9) {
+            self.indexRandomQuestion += 1
             self.checkSubmitStatus()
+            self.setNeededQuestionIndex()
             if (self.isSubmitted){
                 self.updateCorrectAnswers()
             }
             print("indexRandomQuestion = ",indexRandomQuestion)
-            self.setNeededQuestionIndex()
         }
     }
 
     func isPreviousClicked() {
-        if (indexRandomQuestion != 0) {
-            indexRandomQuestion -= 1
+        if (self.indexRandomQuestion != 0) {
+            self.indexRandomQuestion -= 1
             self.checkSubmitStatus()
+            self.setNeededQuestionIndex()
             if (self.isSubmitted){
                 self.updateCorrectAnswers()
             }
-            self.setNeededQuestionIndex()
+            print("indexRandomQuestion = ",indexRandomQuestion)
         }
     }
     
