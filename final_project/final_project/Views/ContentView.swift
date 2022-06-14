@@ -48,7 +48,7 @@ struct ContentView: View {
                 //Buttons
                 HStack(alignment: .center)
                 {
-                    NavigationLink(destination: QuizView(), isActive: self.$navigateToQuizzes) { EmptyView() }
+                    NavigationLink(destination: QuizMenuView(), isActive: self.$navigateToQuizzes) { EmptyView() }
                     Button(action: {
                         self.navigateToQuizzes = true
                      }, label: {

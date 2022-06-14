@@ -26,11 +26,16 @@ class QuizViewModel: ObservableObject {
     @Published var indexRandomQuestion: Int = 0
     @Published var indexQuestion: Int = 0
     @Published var correctAnswers: String = ""
-
+    
+    //generic text
+    @Published var quizCategory: String = ""
+    @Published var quizImage: String = ""
 
     var availableIDs: [Int] = []
 
-    func setup() {
+    func setup(jsonData: String) {
+        self.resetQuiz()
+        self.questions = load(jsonData)
         self.storeAllIDs()
         self.randomizeQuizzes()
     }
@@ -55,7 +60,7 @@ class QuizViewModel: ObservableObject {
 
     func setNeededQuestionIndex() {
         let item = self.tenRandomIDQuestions[indexRandomQuestion]
-        indexQuestion = self.questions.firstIndex(where: { $0.id == item })!
+        self.indexQuestion = self.questions.firstIndex(where: { $0.id == item })!
     }
 
     func isNextClicked() {
@@ -90,11 +95,9 @@ class QuizViewModel: ObservableObject {
     }
     
     func isNextAllowed() -> Bool {
-        print("isNextAllowed ?")
         if (indexRandomQuestion >= 9) {
           return false
         } else {
-          print("Next is allowed")
           return true
         }
     }
@@ -127,15 +130,28 @@ class QuizViewModel: ObservableObject {
         self.updateCorrectAnswers()
     }
 
+    //prepare new random questions
+    func tryAgain() {
+        self.tenRandomIDQuestions = []
+        self.resetCheckBoxes()
+        self.availableIDs = []
+        self.isSubmitted = false
+        self.showSubmit = false
+        self.indexRandomQuestion = 0
+        self.indexQuestion = 0
+        self.storeAllIDs()
+        self.randomizeQuizzes()
+    }
     
     func resetQuiz() {
-        tenRandomIDQuestions = []
+        self.questions = []
+        self.tenRandomIDQuestions = []
+        self.availableIDs = []
         self.resetCheckBoxes()
-        isSubmitted = false
-        showSubmit = false
-        indexRandomQuestion = 0
-        indexQuestion = 0
-        self.setup()
+        self.isSubmitted = false
+        self.showSubmit = false
+        self.indexRandomQuestion = 0
+        self.indexQuestion = 0
     }
     
     func stringToBool(answer:String) -> Bool {
