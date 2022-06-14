@@ -20,14 +20,13 @@ struct SAnswersStates{
 class QuizViewModel: ObservableObject {
     @Published var tenRandomIDQuestions: [Int] = []
     @Published var tenRandomIDQuestionsStates: [SAnswersStates] = Array(repeating:SAnswersStates(answer_a: false,answer_b: false,answer_c: false,answer_d: false,answer_e: false,answer_f: false), count:10)
-    //@Published var all_answers_states: [Bool?] = Array(repeating:false, count:6)
-    @Published var jsonCategory: String = ""
     @Published var questions: [SQuestions] = []
     @Published var isSubmitted: Bool = false
     @Published var showSubmit: Bool = false
-
     @Published var indexRandomQuestion: Int = 0
     @Published var indexQuestion: Int = 0
+    @Published var correctAnswers: String = ""
+
 
     var availableIDs: [Int] = []
 
@@ -61,16 +60,23 @@ class QuizViewModel: ObservableObject {
 
     func isNextClicked() {
         if (indexRandomQuestion < 9) {
-          indexRandomQuestion += 1
-          self.checkSubmitStatus()
-          print("indexRandomQuestion = ",indexRandomQuestion)
-          self.setNeededQuestionIndex()
+            indexRandomQuestion += 1
+            self.checkSubmitStatus()
+            if (self.isSubmitted){
+                self.updateCorrectAnswers()
+            }
+            print("indexRandomQuestion = ",indexRandomQuestion)
+            self.setNeededQuestionIndex()
         }
     }
 
     func isPreviousClicked() {
         if (indexRandomQuestion != 0) {
             indexRandomQuestion -= 1
+            self.checkSubmitStatus()
+            if (self.isSubmitted){
+                self.updateCorrectAnswers()
+            }
             self.setNeededQuestionIndex()
         }
     }
@@ -101,26 +107,35 @@ class QuizViewModel: ObservableObject {
         }
     }
     
-    func resetCheckBoxes() {
-        tenRandomIDQuestionsStates = Array(repeating:SAnswersStates(answer_a: false,answer_b: false,answer_c: false,answer_d: false,answer_e: false,answer_f: false), count:10)
+    func updateCorrectAnswers() {
+        self.correctAnswers = ""
+        self.correctAnswers += self.stringToBool(answer: self.questions[indexQuestion].correct_answers.answer_a_correct!) ? "a. " : ""
+        self.correctAnswers += self.stringToBool(answer: self.questions[indexQuestion].correct_answers.answer_b_correct!) ? "b. " : ""
+        self.correctAnswers += self.stringToBool(answer: self.questions[indexQuestion].correct_answers.answer_c_correct!) ? "c. " : ""
+        self.correctAnswers += self.stringToBool(answer: self.questions[indexQuestion].correct_answers.answer_d_correct!) ? "d. " : ""
+        self.correctAnswers += self.stringToBool(answer: self.questions[indexQuestion].correct_answers.answer_e_correct!) ? "e. " : ""
+        self.correctAnswers += self.stringToBool(answer: self.questions[indexQuestion].correct_answers.answer_f_correct!) ? "f. " : ""
+        print("correctAnswers = ",self.correctAnswers)
     }
     
-    func calculateScore() {
-      /*
-        for i in 1..10 {
-            if self.questions[indexQuestion].correct_answers.answer_a
-            if (tenRandomIDQuestionsStates[i])
-        }
-      */
+    func resetCheckBoxes() {
+        tenRandomIDQuestionsStates = Array(repeating:SAnswersStates(answer_a: false,answer_b: false,answer_c: false,answer_d: false,answer_e: false,answer_f: false), count:10)
     }
 
     func isSubmitClicked() {
         self.isSubmitted = true
+        self.updateCorrectAnswers()
     }
 
     
-    func resetGame() {
+    func resetQuiz() {
+        tenRandomIDQuestions = []
         self.resetCheckBoxes()
+        isSubmitted = false
+        showSubmit = false
+        indexRandomQuestion = 0
+        indexQuestion = 0
+        self.setup()
     }
     
     func stringToBool(answer:String) -> Bool {

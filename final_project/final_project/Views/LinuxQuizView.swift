@@ -51,19 +51,23 @@ struct LinuxQuizView: View {
                  .padding(.bottom,5)
                 
                 Button(action: {
-                    QuizVM.isSubmitClicked()
+                    if QuizVM.isSubmitted {
+                       QuizVM.resetQuiz()
+                    } else {
+                       QuizVM.isSubmitClicked()
+                    }
                 }, label: {
-                Text("Submit")
+                Text(QuizVM.isSubmitted ? "Try again":"Submit")
                     .font(.system(size:15))
-                    .frame(width:geo.size.width/4 - 10, height:geo.size.height/11)
-                    .background(Color.green)
+                    .bold()
+                    .frame(width:geo.size.width/4 - 10, height:geo.size.height/12)
+                    .background(QuizVM.isSubmitted ? Color.red: Color.green)
                     .foregroundColor(Color.white)
                     .clipShape(Rectangle())
                     .cornerRadius(10)
                     .opacity(QuizVM.showSubmit ? 1 : 0)
-                })//.frame(height: QuizVM.showSubmit ? nil : 0) //nil in this case means do nothing; keep the frame as it is
-                  .disabled(!QuizVM.showSubmit)
-
+                }).disabled(!QuizVM.showSubmit)
+                
              }.frame(maxWidth:.infinity, maxHeight: .infinity, alignment: .top)
               .padding(.top,2)
         
@@ -74,7 +78,7 @@ struct LinuxQuizView: View {
                     }, label: {
                     Text("Previous")
                         .font(.system(size:15))
-                        .frame(width:geo.size.width/4 - 10, height:geo.size.height/11)
+                        .frame(width:geo.size.width/4 - 10, height:geo.size.height/12)
                         .background(Color.gray)
                         .foregroundColor(Color.white)
                         .clipShape(Rectangle())
@@ -87,7 +91,7 @@ struct LinuxQuizView: View {
                     }, label: {
                     Text("Next")
                         .font(.system(size:15))
-                        .frame(width:geo.size.width/4 - 10, height:geo.size.height/11)
+                        .frame(width:geo.size.width/4 - 10, height:geo.size.height/12)
                         .background(Color.gray)
                         .foregroundColor(Color.white)
                         .clipShape(Rectangle())
@@ -96,8 +100,7 @@ struct LinuxQuizView: View {
                     }).disabled(!QuizVM.isNextAllowed())
                      
              }.frame(maxWidth:.infinity, maxHeight: .infinity, alignment: .bottom)
-          }//.frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.center)
-           .background(.black)
+          }.background(.black)
            .navigationBarTitle("Back")
         }
     }
@@ -129,6 +132,12 @@ struct LinuxQuizView: View {
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
 
+                    //Show if the submitted answers are correct or not
+                    //The checkboxes that are marked will be checked
+                    Text(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_a ? (QuizVM.isUserAnswerForACorrect() ?  "✓" : "X" ): "")
+                            .font(.system(size:15))
+                            .foregroundColor(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_a ? (QuizVM.isUserAnswerForACorrect() ?  Color.green : Color.red): Color.white)
+                            .fixedSize(horizontal: false, vertical: true)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
               .padding(.bottom,5)
@@ -146,6 +155,12 @@ struct LinuxQuizView: View {
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
 
+                    //Show if the submitted answers are correct or not
+                    //The checkboxes that are marked will be checked
+                    Text(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_b ? (QuizVM.isUserAnswerForBCorrect() ?  "✓" : "X" ): "")
+                            .font(.system(size:15))
+                            .foregroundColor(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_b ? (QuizVM.isUserAnswerForBCorrect() ?  Color.green : Color.red): Color.white)
+                            .fixedSize(horizontal: false, vertical: true)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
               .padding(.bottom,5)
@@ -163,6 +178,12 @@ struct LinuxQuizView: View {
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
 
+                    //Show if the submitted answers are correct or not
+                    //The checkboxes that are marked will be checked
+                    Text(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_c ? (QuizVM.isUserAnswerForCCorrect() ?  "✓" : "X" ): "")
+                            .font(.system(size:15))
+                            .foregroundColor(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_c ? (QuizVM.isUserAnswerForCCorrect() ?  Color.green : Color.red): Color.white)
+                            .fixedSize(horizontal: false, vertical: true)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
               .padding(.bottom,5)
@@ -181,6 +202,12 @@ struct LinuxQuizView: View {
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
 
+                    //Show if the submitted answers are correct or not
+                    //The checkboxes that are marked will be checked
+                    Text(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_d ? (QuizVM.isUserAnswerForDCorrect() ?  "✓" : "X" ): "")
+                            .font(.system(size:15))
+                            .foregroundColor(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_d ? (QuizVM.isUserAnswerForDCorrect() ?  Color.green : Color.red): Color.white)
+                            .fixedSize(horizontal: false, vertical: true)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
               .padding(.bottom,5)
@@ -199,6 +226,12 @@ struct LinuxQuizView: View {
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
 
+                    //Show if the submitted answers are correct or not
+                    //The checkboxes that are marked will be checked
+                    Text(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_e ? (QuizVM.isUserAnswerForECorrect() ?  "✓" : "X" ): "")
+                            .font(.system(size:15))
+                            .foregroundColor(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_e ? (QuizVM.isUserAnswerForECorrect() ?  Color.green : Color.red): Color.white)
+                            .fixedSize(horizontal: false, vertical: true)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
               .padding(.bottom,5)
@@ -217,8 +250,9 @@ struct LinuxQuizView: View {
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
 
-                    //Show if correct or not
-                    Text(QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f ? (QuizVM.isUserAnswerForFCorrect() ?  "✓" : "X" ): "")
+                    //Show if the submitted answers are correct or not
+                    //The checkboxes that are marked will be checked
+                    Text(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f ? (QuizVM.isUserAnswerForFCorrect() ?  "✓" : "X" ): "")
                             .font(.system(size:15))
                             .foregroundColor(QuizVM.isSubmitted && QuizVM.tenRandomIDQuestionsStates[QuizVM.indexRandomQuestion].answer_f ? (QuizVM.isUserAnswerForFCorrect() ?  Color.green : Color.red): Color.white)
                             .fixedSize(horizontal: false, vertical: true)
@@ -226,7 +260,18 @@ struct LinuxQuizView: View {
             }.frame(maxWidth: .infinity, alignment: .leading)
               .padding(.bottom,5)
 
+              
+            HStack{
+                Text("Correct answer(s) is/are :\(QuizVM.correctAnswers)")
+                            .font(.system(size:15))
+                            .foregroundColor(Color.green)
+                            .opacity(QuizVM.isSubmitted ? 1 : 0)
+                            .fixedSize(horizontal: false, vertical: true)
+
+            }.frame(maxWidth: .infinity, alignment: .leading)
+              .padding(.bottom,5)
        }.padding(10)
+        .disabled(QuizVM.isSubmitted)
     }
 }
 
