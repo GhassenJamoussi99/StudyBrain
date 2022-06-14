@@ -11,16 +11,16 @@
 		C716F2EC2856BCF100555D35 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716F2EB2856BCF100555D35 /* QuizViewModel.swift */; };
 		C73CA16128588606000AFC7A /* docker_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = C73CA16028588606000AFC7A /* docker_questions.json */; };
 		C73CA16328589060000AFC7A /* bash_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = C73CA16228589060000AFC7A /* bash_questions.json */; };
+		C73CA1652858DC5D000AFC7A /* load0.gif in Resources */ = {isa = PBXBuildFile; fileRef = C73CA1642858DC5D000AFC7A /* load0.gif */; };
+		C73CA1672858DC67000AFC7A /* load2.gif in Resources */ = {isa = PBXBuildFile; fileRef = C73CA1662858DC67000AFC7A /* load2.gif */; };
+		C73CA1692858DC6E000AFC7A /* load4.gif in Resources */ = {isa = PBXBuildFile; fileRef = C73CA1682858DC6E000AFC7A /* load4.gif */; };
+		C73CA16B2858DC75000AFC7A /* brain_loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = C73CA16A2858DC75000AFC7A /* brain_loader.gif */; };
 		C7467D7E2856494C00792A80 /* jsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D7D2856494C00792A80 /* jsonDecoder.swift */; };
 		C7467D8028566FC700792A80 /* SQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D7F28566FC700792A80 /* SQuestions.swift */; };
 		C7467D82285670C300792A80 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D81285670C300792A80 /* ModelData.swift */; };
 		C7467D84285676D700792A80 /* QuizMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7467D83285676D700792A80 /* QuizMenuView.swift */; };
 		C74B357128572AB400C76BB9 /* linux_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = C74B357028572AB400C76BB9 /* linux_questions.json */; };
-		C7B005412851F45B00323E1D /* brain_loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005402851F45B00323E1D /* brain_loader.gif */; };
-		C7B005432851F71000323E1D /* load0.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005422851F71000323E1D /* load0.gif */; };
-		C7B005452851F8A200323E1D /* load4.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B005442851F8A200323E1D /* load4.gif */; };
 		C7B00547285202A800323E1D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B00546285202A800323E1D /* GifImage.swift */; };
-		C7B0054928520E9C00323E1D /* load2.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B0054828520E9C00323E1D /* load2.gif */; };
 		C7B0054B2852118700323E1D /* MindGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0054A2852118700323E1D /* MindGamesView.swift */; };
 		C7B0054D2852119500323E1D /* MemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0054C2852119500323E1D /* MemoryGameView.swift */; };
 		C7B0055128523D1100323E1D /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0055028523D1100323E1D /* MemoryGameViewModel.swift */; };
@@ -59,16 +59,16 @@
 		C716F2EB2856BCF100555D35 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		C73CA16028588606000AFC7A /* docker_questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = docker_questions.json; sourceTree = "<group>"; };
 		C73CA16228589060000AFC7A /* bash_questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bash_questions.json; sourceTree = "<group>"; };
+		C73CA1642858DC5D000AFC7A /* load0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load0.gif; sourceTree = "<group>"; };
+		C73CA1662858DC67000AFC7A /* load2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load2.gif; sourceTree = "<group>"; };
+		C73CA1682858DC6E000AFC7A /* load4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load4.gif; sourceTree = "<group>"; };
+		C73CA16A2858DC75000AFC7A /* brain_loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = brain_loader.gif; sourceTree = "<group>"; };
 		C7467D7D2856494C00792A80 /* jsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonDecoder.swift; sourceTree = "<group>"; };
 		C7467D7F28566FC700792A80 /* SQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQuestions.swift; sourceTree = "<group>"; };
 		C7467D81285670C300792A80 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		C7467D83285676D700792A80 /* QuizMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMenuView.swift; sourceTree = "<group>"; };
 		C74B357028572AB400C76BB9 /* linux_questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = linux_questions.json; sourceTree = "<group>"; };
-		C7B005402851F45B00323E1D /* brain_loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = brain_loader.gif; sourceTree = "<group>"; };
-		C7B005422851F71000323E1D /* load0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load0.gif; sourceTree = "<group>"; };
-		C7B005442851F8A200323E1D /* load4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load4.gif; sourceTree = "<group>"; };
 		C7B00546285202A800323E1D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
-		C7B0054828520E9C00323E1D /* load2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load2.gif; sourceTree = "<group>"; };
 		C7B0054A2852118700323E1D /* MindGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindGamesView.swift; sourceTree = "<group>"; };
 		C7B0054C2852119500323E1D /* MemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameView.swift; sourceTree = "<group>"; };
 		C7B0055028523D1100323E1D /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
@@ -116,10 +116,10 @@
 		C710598D28517BD40029B959 /* GIFs */ = {
 			isa = PBXGroup;
 			children = (
-				C7B005422851F71000323E1D /* load0.gif */,
-				C7B0054828520E9C00323E1D /* load2.gif */,
-				C7B005442851F8A200323E1D /* load4.gif */,
-				C7B005402851F45B00323E1D /* brain_loader.gif */,
+				C73CA16A2858DC75000AFC7A /* brain_loader.gif */,
+				C73CA1682858DC6E000AFC7A /* load4.gif */,
+				C73CA1662858DC67000AFC7A /* load2.gif */,
+				C73CA1642858DC5D000AFC7A /* load0.gif */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -343,14 +343,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D97B5C284F9DD60063762B /* Preview Assets.xcassets in Resources */,
-				C7B0054928520E9C00323E1D /* load2.gif in Resources */,
-				C7B005452851F8A200323E1D /* load4.gif in Resources */,
-				C7B005432851F71000323E1D /* load0.gif in Resources */,
-				C7B005412851F45B00323E1D /* brain_loader.gif in Resources */,
+				C73CA1692858DC6E000AFC7A /* load4.gif in Resources */,
+				C73CA1652858DC5D000AFC7A /* load0.gif in Resources */,
 				C7D97B59284F9DD60063762B /* Assets.xcassets in Resources */,
+				C73CA16B2858DC75000AFC7A /* brain_loader.gif in Resources */,
 				C74B357128572AB400C76BB9 /* linux_questions.json in Resources */,
 				C73CA16128588606000AFC7A /* docker_questions.json in Resources */,
 				C73CA16328589060000AFC7A /* bash_questions.json in Resources */,
+				C73CA1672858DC67000AFC7A /* load2.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

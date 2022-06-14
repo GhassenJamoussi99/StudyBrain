@@ -11,34 +11,37 @@ struct StudyTimerView: View {
     
     var body: some View {
         VStack {
-            HStack{
-            Text("Study Timer")
-                .bold()
-                .font(.system(size: 35))
-                .foregroundColor(Color.white)
-            }
-            
             GeometryReader { geo in
                 VStack {
-                    //GifImage lib is a static view so we need multiple objects instantiation to update the GIF
-                    HStack{
-                        if (StudyTimerVM.gifName == "load0" ) { //not started yet
-                          GifImage(StudyTimerVM.gifName)
-                        } else if (StudyTimerVM.gifName == "load2" ) { //is paused
-                          GifImage(StudyTimerVM.gifName)
-                        } else if (StudyTimerVM.gifName == "load4" ) { //is finished
-                          GifImage(StudyTimerVM.gifName)
-                        } else if (StudyTimerVM.gifName == "brain_loader") { //timer is working
-                          GifImage(StudyTimerVM.gifName)
+                    VStack {
+                        HStack{
+                        Text("Study Timer")
+                            .bold()
+                            .font(.system(size: 35))
+                            .foregroundColor(Color.white)
                         }
-                    }.frame(width: geo.size.width/2,height:geo.size.height/2)
-                                    
-                    HStack{
-                        Text(StudyTimerVM.timerStringValue)
-                            .font(.system(size:45,weight:.light))
-                            .foregroundColor(.white)
-                    }.frame(width: geo.size.width, height: geo.size.height/4)
+                    
+                        //GifImage lib is a static view so we need multiple objects instantiation to update the GIF
+                        HStack{
+                            if (StudyTimerVM.gifName == "load0" ) { //not started yet
+                              GifImage(StudyTimerVM.gifName)
+                            } else if (StudyTimerVM.gifName == "load2" ) { //is paused
+                              GifImage(StudyTimerVM.gifName)
+                            } else if (StudyTimerVM.gifName == "load4" ) { //is finished
+                              GifImage(StudyTimerVM.gifName)
+                            } else if (StudyTimerVM.gifName == "brain_loader") { //timer is working
+                              GifImage(StudyTimerVM.gifName)
+                            }
+                        }.frame(width: geo.size.width/2,height:geo.size.height/2)
+                                        
+                        HStack{
+                            Text(StudyTimerVM.timerStringValue)
+                                .font(.system(size:45,weight:.light))
+                                .foregroundColor(.white)
+                        }.frame(width: geo.size.width, height: geo.size.height/4)
                         
+                    }.frame(maxWidth:.infinity, maxHeight: .infinity, alignment: .top)
+                    
                     HStack {
                         Button(action: {
                             if StudyTimerVM.isStarted && !StudyTimerVM.isPaused {
@@ -82,8 +85,8 @@ struct StudyTimerView: View {
                             
                         }).disabled(StudyTimerVM.isTimerEmpty())
                           .opacity(StudyTimerVM.isTimerEmpty() ? 0.5 : 1)
-                    }
-                }.frame(maxWidth: .infinity)
+                    }.frame(maxWidth:.infinity, maxHeight: .infinity, alignment: .bottom)
+                }
             }
         }.padding()
          .overlay(content:{
@@ -144,7 +147,7 @@ struct StudyTimerView: View {
                  .padding(.vertical,12)
                  .background{
                     Capsule()
-                         .fill(.white.opacity(0.07))
+                         .fill(.white.opacity(0.2))
                  }
                   .contextMenu{
                   ContextMenuOptions(maxValue:23,hint:"hr"){ value in
@@ -159,7 +162,7 @@ struct StudyTimerView: View {
                  .padding(.vertical,12)
                  .background{
                     Capsule()
-                         .fill(.white.opacity(0.07))
+                         .fill(.white.opacity(0.2))
                  }
                  .contextMenu{
                     ContextMenuOptions(maxValue:59,hint:"mn"){ value in
@@ -174,7 +177,7 @@ struct StudyTimerView: View {
                  .padding(.vertical,12)
                  .background{
                     Capsule()
-                         .fill(.white.opacity(0.07))
+                         .fill(.white.opacity(0.2))
                  }
                  .contextMenu{
                         ContextMenuOptions(maxValue:59,hint:"sec"){ value in
@@ -206,12 +209,12 @@ struct StudyTimerView: View {
         .background{
             RoundedRectangle(cornerRadius:10, style:.continuous)
                 //.fill(Color("BG_2"))
-                .fill(Color("Black"))
+                .fill(Color("darkblue"))
                 .ignoresSafeArea()
         }
     }
     
-    // MARK:Reusable Context Menu Options
+    // Reusable Context Menu Options
     @ViewBuilder
     func ContextMenuOptions(maxValue:Int, hint:String, onClick: @escaping(Int)->())->some View{
         ForEach(0...maxValue,id:\.self){value in Button("\(value) \(hint)"){
