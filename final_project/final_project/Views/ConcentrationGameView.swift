@@ -97,7 +97,7 @@ struct ConcentrationGameView: View {
                     }).frame(height: ConcentrationGameVM.isStartVisible ? nil : 0)
                         .disabled(!ConcentrationGameVM.isStartVisible)
                 }.frame(maxHeight: .infinity, alignment: .bottom)
-                //////////////////////////////////////////////////////////////////////////////
+                
                 //True/False buttons
                 HStack(alignment: .center){
                     Button(action: {

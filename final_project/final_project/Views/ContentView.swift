@@ -10,9 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var navigateToStudyTimer = false
     @State private var navigateToMindGames = false
-
-    //Possibility to create quizzes as well
-    //Linux questions and bash etc ...
     @State private var navigateToQuizzes = false
     
     var body: some View {
@@ -31,19 +28,6 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.bottom,100)
-                
-                //Image
-                /*
-                HStack(alignment: .center)
-                {
-                    Image("study_img")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(50)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.bottom,40)
-                */
                 
                 //Buttons
                 HStack(alignment: .center)
@@ -110,7 +94,4 @@ struct ContentView_Previews: PreviewProvider {
 
 
 
-//TODO : change figure(nil) to opacity(0)
-//       Remove unnecessary optional values
-//       navigation link solution : environemnt object maybe ?
-//        change Add Timer buttons ?
+//TODO :  change Add Timer buttons ?
