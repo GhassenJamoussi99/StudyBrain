@@ -66,12 +66,8 @@ struct StudyTimerView: View {
                         Button(action: {
                             if (!StudyTimerVM.isStarted) {
                                 StudyTimerVM.isStarted = true
-                                //StudyTimerVM.isStartButton = true
-                                //StudyTimerVM.isCancelButton = false
                             } else {
                                 StudyTimerVM.cancelTimer()
-                                //StudyTimerVM.isCancelButton = true
-                                //StudyTimerVM.isStartButton = false
                             }
                         },
                              label: {
@@ -125,8 +121,7 @@ struct StudyTimerView: View {
             )
          }
     }
-    
-    // MARK:New Timer Bottom Sheet
+    //New Timer Bottom Sheet
     @ViewBuilder
      func NewTimerView()->some View{
         VStack(spacing:15){

@@ -2,7 +2,7 @@
 //  final_projectUITestsLaunchTests.swift
 //  final_projectUITests
 //
-//  Created by user218705 on 6/7/22.
+//  Created by Ghassen Jamoussi on 6/7/22.
 //
 
 import XCTest

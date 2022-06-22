@@ -10,11 +10,10 @@ import SwiftUI
 
 
 class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterDelegate{
-    // MARK:Timer Properties
+    
     @Published var timerStringValue:String = "00:00"
     @Published var saveTimerStringValue:String = ""
     @Published var gifName:String = "load0"
-
     @Published var isStarted  : Bool = false
     @Published var isFinished  : Bool = false
     @Published var addNewTimer: Bool = false //invoke add new timer window
@@ -36,10 +35,10 @@ class StudyTimerViewModel: NSObject, ObservableObject, UNUserNotificationCenterD
         self.authorizeNotification()
     }
 
-    // MARK:Requesting Notification Access
+    // Requesting Notification Access
     func authorizeNotification(){
       UNUserNotificationCenter.current().requestAuthorization(options:[.sound,.alert,.badge]) { _, _ in}
-      // MARK:To Show In App Notification
+      // To Show In App Notification
       UNUserNotificationCenter.current().delegate=self
     }
 

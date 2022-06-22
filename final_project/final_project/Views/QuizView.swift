@@ -2,7 +2,7 @@
 //  QuizView.swift
 //  final_project
 //
-//  Created by user218705 on 6/12/22.
+//  Created by Ghassen Jamoussi on 6/12/22.
 //
 
 import SwiftUI
@@ -274,11 +274,3 @@ struct QuizView: View {
         .disabled(QuizVM.isSubmitted)
     }
 }
-
-/*
-TODO: See how to make the viewBuilder simpler especially with the if statement (isEmpty)
-      simplify these values : QuizVM.questions[QuizVM.indexQuestion].answers.answer_f
-          Example : store them in a variable in the view model then call them in this view file
-
-          X ✓
-*/
