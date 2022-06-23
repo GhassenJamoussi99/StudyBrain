@@ -113,7 +113,11 @@ class MemoryGameViewModel: ObservableObject {
     
     func caseClicked(row:Int, column:Int) {
         //set all correct cases to *
-        self.spielBrett[columnRange * row + column] = "*"
+        if (self.spielBrett[columnRange * row + column] == "*") {
+            self.spielBrett[columnRange * row + column] = nil
+        }else {
+            self.spielBrett[columnRange * row + column] = "*"
+        }
     }
     
     func randomCases() {
