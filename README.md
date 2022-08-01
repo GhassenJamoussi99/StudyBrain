@@ -1,6 +1,6 @@
 # StudyBrain
 
-The app is called "StudyBrain" and is designed to help students in various aspects.
+The app is called "StudyBrain" and was developed to help students with various aspects of their studies and daily life.
 
 ![alt text](https://i.imgur.com/tQZJ3xK.png)
 
